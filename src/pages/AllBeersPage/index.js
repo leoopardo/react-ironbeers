@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 import "./allBeerPage.css"
-// import { Link } from "react-router-dom";
+import { HomeButton } from "../../components/HomeButton";
+import { Link } from "react-router-dom";
 
 export function AllBeersPage() {
     const [beer, setBeer] = useState([])
@@ -17,27 +18,24 @@ export function AllBeersPage() {
     console.log(beer)
     
     return (  
-        <>
-        <ul className="beersPage">
+        <div className="beersPg">
+        <HomeButton />
+        <div className="beersPage">
             {beer.map((currentBeer) => {
                 return(
-                <div className="card mb-3" style={{maxWidth: "540px",}}>
-                <div className="row g-0">
-                    <div className="col-md-4">
-                    <img src={currentBeer.image_url} className="img-fluid rounded-start" alt={currentBeer.name} style={{height: "200px"}}/>
-                    </div>
-                    <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title">{currentBeer.name}</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    </div>
-                </div>
-                </div>
+                    <Link to={`/beers/${currentBeer._id}`} style={{ textDecoration: 'none' }}><div className="cardBeer">
+                        <div className="currentBeerImg">
+                            <img src={currentBeer.image_url} alt={currentBeer.name} className="beerImg"/>
+                        </div> 
+                        <div className="currentBeerText">
+                            <h5>{currentBeer.name}</h5>
+                            <p>{currentBeer.tagline}</p>
+                            <p><span><strong>Created by:</strong>{` ${currentBeer.contributed_by}`}</span></p>
+                        </div>
+                    </div></Link>
                 );
             })}
-        </ul>
-        </>
+        </div>
+        </div>
     );
 }
