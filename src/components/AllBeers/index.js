@@ -5,7 +5,7 @@ import beers from "../../assets/beers.png"
 export function AllBeers() {
     return ( 
         <div>
-            <Link to="/" style={{textDecoration: "none"}} className="allBeersLink">
+            <Link to="/AllBeers" style={{textDecoration: "none"}} className="allBeersLink">
                 <img src={beers} alt="All-Beers" className="img"/>
                 <h1>All Beers</h1>
                 <p>Veja o nosso incrível catálogo das mais diversas e saborosas cervejas e aproveite para descobrir e expandir seus horizontes em um mundo de diversidades.</p>
