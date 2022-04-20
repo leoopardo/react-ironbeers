@@ -1,0 +1,21 @@
+
+@media screen and (min-width: 300px) and (max-width: 350px) {
+    .img{
+        width: 330px;
+    }
+}
+@media screen and (min-width:350px) and (max-width: 380px) {
+    .img{
+        width: 349px;
+    }
+}
+@media screen and (min-width: 380px) and (max-width: 400px) {
+    .img{
+        width: 379px;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    .img{
+        width: 399px
+    }
+}
